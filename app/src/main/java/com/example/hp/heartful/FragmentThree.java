@@ -61,6 +61,8 @@ import static com.facebook.FacebookSdk.getApplicationContext;
  */
 public class FragmentThree extends Fragment implements View.OnClickListener{
 
+    private boolean shouldRefreshOnResume = false;
+    private boolean justRefreshed = false;
     private EditText email_Id;
     private EditText password;
     private SignInButton mgoogleSign;
@@ -109,7 +111,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
         progressDialog=new ProgressDialog(getActivity());
         progress=new ProgressDialog(getActivity());
         email_Id=(EditText)view.findViewById(R.id.email_id);
-        progress.setMessage("Connecting to google account,please wait...");
+        progress.setMessage("Connecting to Google Account, please wait...");
         password=(EditText)view.findViewById(R.id.password);
         User_Name=(EditText)view.findViewById(R.id.User_name);
         Sign_Up=(Button)view.findViewById(R.id.sign_up);
@@ -120,18 +122,36 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
         login_Text.setOnClickListener(this);
         mFbLogin=(LoginButton)view.findViewById(R.id.fb_login);
 
-        Glide
-                .with(getActivity())
-                .load(profilePicLink)
-                .dontAnimate()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(profilePic);
-        userName.setText(profileName);
+        if(mAuth.getCurrentUser()!=null) {
+            mAuth=FirebaseAuth.getInstance();
+            firebaseUser=mAuth.getCurrentUser();
+            forUsers.child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Users user = dataSnapshot.getValue(Users.class);
+                    profilePicLink = user.getProfilePicLink();
+                    profileName = user.getUserName();
+                    Glide
+                            .with(getActivity())
+                            .load(profilePicLink)
+                            .dontAnimate()
+                            .diskCacheStrategy(DiskCacheStrategy.ALL)
+                            .into(profilePic);
+                    userName.setText(profileName);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
 
         mAuthStateListener= new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull final FirebaseAuth firebaseAuth) {
 
+                justRefreshed = false;
             }
 
         };
@@ -278,8 +298,10 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
             login();
 
         }
-        if (view==edit){
-            startActivity(new Intent(getActivity(),Preferences.class) );
+        if(mAuth.getCurrentUser()!=null) {
+            if (view == edit) {
+                startActivity(new Intent(getActivity(), Preferences.class));
+            }
         }
     }
     //
@@ -325,6 +347,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
                         if (task.isSuccessful()){
                             //show user profile
                             Toast.makeText(getActivity(),"Registerd successfully",Toast.LENGTH_SHORT).show();
+                            justRefreshed = false;
                             reLoad();
                             progressDialog.dismiss();
                             //  startActivity(new Intent(getActivity(),userProfileActivity.class));
@@ -363,31 +386,11 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
                             Log.i(TAG, "given  Name: " + personName);
                             Log.i(TAG, "uri: " + personPhoto);
                             Log.v(TAG, "signInWithCredential:success");
-                            forUsers.child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    Users user = dataSnapshot.getValue(Users.class);
-                                    profilePicLink=user.getProfilePicLink();
-                                    profileName=user.getUserName();
-                                    Glide
-                                            .with(getActivity())
-                                            .load(profilePicLink)
-                                            .dontAnimate()
-                                            .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                            .into(profilePic);
-                                    userName.setText(profileName);
-                                }
-
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
-                                }
-                            });
-
-
                             Log.v(TAG, "signInWithCredential:success");
-                            reLoad();
+                            justRefreshed = false;
                             fbProgress.dismiss();
+                            reLoad();
+
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -427,27 +430,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
                             Log.i(TAG, "given  Name: " + personName);
                             Log.i(TAG, "uri: " + personPhoto);
                             Log.v(TAG, "signInWithCredential:success");
-                            forUsers.child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    Users user = dataSnapshot.getValue(Users.class);
-                                    profilePicLink=user.getProfilePicLink();
-                                    profileName=user.getUserName();
-                                    Glide
-                                            .with(getActivity())
-                                            .load(profilePicLink)
-                                            .dontAnimate()
-                                            .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                            .into(profilePic);
-                                    userName.setText(profileName);
-                                }
-
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
-                                }
-                            });
-
+                            justRefreshed = false;
                             reLoad();
                             progress.dismiss();
 
@@ -466,12 +449,43 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
                 });
     }
     public void reLoad(){
-        FragmentThree fragment = (FragmentThree)
-                getFragmentManager().getFragments().get(2);
-        getFragmentManager().beginTransaction()
-                .detach(fragment)
-                .attach(fragment)
-                .commit();
+
+        if(!justRefreshed) {
+            FragmentThree fragment = (FragmentThree)
+                    getFragmentManager().getFragments().get(2);
+            getFragmentManager().beginTransaction()
+                    .detach(fragment)
+                    .attach(fragment)
+                    .commit();
+            shouldRefreshOnResume = false;
+        }
+
+        justRefreshed = true;
+        Log.v("reload done", "value of should refresh"+String.valueOf(shouldRefreshOnResume));
+
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        shouldRefreshOnResume = true;
+        Log.v("value of should refresh", String.valueOf(shouldRefreshOnResume));
+        Log.v("reload", "onStop");
+
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Check should we need to refresh the fragment
+        if(shouldRefreshOnResume){
+            // refresh fragment
+            Log.v("value of should refresh", String.valueOf(shouldRefreshOnResume));
+            Log.v("reload ing through", "onresume");
+            reLoad();
+        }
+    }
+
 
 }

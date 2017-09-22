@@ -1,6 +1,5 @@
 package com.example.hp.heartful;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,6 +31,7 @@ public class Preferences extends AppCompatActivity implements View.OnClickListen
         logout = (LinearLayout) findViewById(R.id.signout);
         logout.setOnClickListener(this);
         mAuth=FirebaseAuth.getInstance();
+
     }
 
     @Override
@@ -41,7 +41,6 @@ public class Preferences extends AppCompatActivity implements View.OnClickListen
             mAuth.signOut();
             Toast.makeText(Preferences.this,"user has been sign out",Toast.LENGTH_LONG).show();
             finish();
-            startActivity(new Intent(Preferences.this,Home.class));
 
         }
 

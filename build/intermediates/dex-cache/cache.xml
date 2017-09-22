@@ -2,6 +2,15 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="C:\Users\HP\.android\build-cache\16da38bb30770a099be5df7f4c4851ebb211f006\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="C:\Users\HP\Documents\GitHub\HeartFulv0.3\app\build\intermediates\pre-dexed\debug\classes_789e10135d63f20e755a2955162915c0f6eaab64.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\HP\Documents\GitHub\HeartFulv0.3\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
@@ -16,17 +25,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="3df35c5c442f35b2a28e84df29520203f5ce73f1">
+        sha1="bcb56f77df0be282c3112769c1fbc53b690ef686">
         <dex dex="C:\Users\HP\Documents\GitHub\HeartFulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_3d3f82d97dca2e8215c7357780fbacc6cb8e7326\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\HP\.android\build-cache\16da38bb30770a099be5df7f4c4851ebb211f006\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
-        <dex dex="C:\Users\HP\Documents\GitHub\HeartFulv0.3\app\build\intermediates\pre-dexed\debug\classes_789e10135d63f20e755a2955162915c0f6eaab64.jar" />
     </item>
 
 </items>
