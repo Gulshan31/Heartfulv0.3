@@ -63,6 +63,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
 
     private boolean shouldRefreshOnResume = false;
     private boolean justRefreshed = false;
+    private boolean usingSignIn = false;
     private EditText email_Id;
     private EditText password;
     private SignInButton mgoogleSign;
@@ -152,6 +153,9 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
             public void onAuthStateChanged(@NonNull final FirebaseAuth firebaseAuth) {
 
                 justRefreshed = false;
+                if(usingSignIn)
+                    shouldRefreshOnResume = true;
+
             }
 
         };
@@ -295,7 +299,10 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
         }
         if(view==login_Text){
             //    login user
+            usingSignIn = true;
             login();
+//            shouldRefreshOnResume=true;
+
 
         }
         if(mAuth.getCurrentUser()!=null) {
@@ -318,7 +325,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
     private  void registerUser(){
         String email=email_Id.getText().toString().trim();
         String pass_word=password.getText().toString().trim();
-        String user_name=User_Name.getText().toString();
+        final   String user_name=User_Name.getText().toString();
         if(TextUtils.isEmpty(user_name)){
             // email is empty
             Toast.makeText(getActivity(),"please select a name",Toast.LENGTH_SHORT).show();
@@ -347,6 +354,10 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
                         if (task.isSuccessful()){
                             //show user profile
                             Toast.makeText(getActivity(),"Registerd successfully",Toast.LENGTH_SHORT).show();
+                            String userId= mAuth.getCurrentUser().getUid();
+                            DatabaseReference database=userInfo.child(userId);
+                            database.child("userName").setValue(user_name);
+                            database.child("profilePicLink").setValue("https://imgur.com/a/uVX5M");
                             justRefreshed = false;
                             reLoad();
                             progressDialog.dismiss();
@@ -365,6 +376,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
     }
 
     private void handleFacebookAccessToken(AccessToken token) {
+        shouldRefreshOnResume = false;
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         Log.v("Facebook","Calling");
         mAuth.signInWithCredential(credential)
@@ -388,9 +400,8 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
                             Log.v(TAG, "signInWithCredential:success");
                             Log.v(TAG, "signInWithCredential:success");
                             justRefreshed = false;
-                            fbProgress.dismiss();
                             reLoad();
-
+                            fbProgress.dismiss();
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -409,6 +420,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
+        shouldRefreshOnResume = false;
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
 
         mAuth.signInWithCredential(credential)
@@ -468,10 +480,14 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
     @Override
     public void onStop() {
         super.onStop();
-        shouldRefreshOnResume = true;
-        Log.v("value of should refresh", String.valueOf(shouldRefreshOnResume));
         Log.v("reload", "onStop");
 
+        if(mAuth.getCurrentUser()!=null)
+            shouldRefreshOnResume = true;
+        else
+            shouldRefreshOnResume = false;
+        Log.v("value of should refresh", String.valueOf(shouldRefreshOnResume));
+//        Log.v("reload", "onStop");
 
     }
 
@@ -479,13 +495,15 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
     public void onResume() {
         super.onResume();
         // Check should we need to refresh the fragment
+        Log.v("reload ing through", "onresume");
+        Log.v(String.valueOf(shouldRefreshOnResume), "onresume");
+
         if(shouldRefreshOnResume){
             // refresh fragment
             Log.v("value of should refresh", String.valueOf(shouldRefreshOnResume));
-            Log.v("reload ing through", "onresume");
+//            Log.v("reload ing through", "onresume");
             reLoad();
         }
     }
-
 
 }

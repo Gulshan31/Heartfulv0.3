@@ -2,6 +2,7 @@
 
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
@@ -20,7 +21,7 @@
         android:dividerHeight="8.0sp"
         android:divider="@android:color/transparent"
         android:id="@+id/new_lists"
-            android:paddingBottom="80dp"
+            android:paddingBottom="8dp"
             android:paddingTop="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
@@ -31,16 +32,20 @@
 </LinearLayout>
 
 
-    <android.support.design.widget.FloatingActionButton
+    <com.melnykov.fab.FloatingActionButton
     android:layout_width="wrap_content"
+
     android:id="@+id/button"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
     android:layout_alignParentRight="true"
     android:layout_margin="16dp"
+        fab:pressedTranslationZ="4dp"
         android:elevation="6dp"
-    android:clickable="true"
+        fab:fab_colorNormal="@color/colorAccent"
+        android:clickable="true"
     app:fabSize="normal"
+        android:src="@drawable/ic_add_black_24dp"
         app:srcCompat="@drawable/ic_add_black_24dp"
     android:scaleType="center"
     />

@@ -34,7 +34,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class FragmentTwo extends Fragment {
     public FragmentTwo(){}
-  ImageButton button;
+  com.melnykov.fab.FloatingActionButton button;
     ImageView imageView;
     private RecyclerView mNewsLists;
     private DatabaseReference mDatabase;
@@ -48,7 +48,7 @@ public class FragmentTwo extends Fragment {
         final   View view =inflater.inflate(R.layout.tab_two, container, false);
         super.onCreate(savedInstanceState);
         imageView = (ImageView) view.findViewById(R.id.news_images);
-        button=(FloatingActionButton) view.findViewById(R.id.button);
+        button=(com.melnykov.fab.FloatingActionButton) view.findViewById(R.id.button);
         firebaseAuth=FirebaseAuth.getInstance();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +107,7 @@ public class FragmentTwo extends Fragment {
             }
         };
         mNewsLists.setAdapter(firebaseRecyclerAdapter);
+        button.attachToRecyclerView(mNewsLists);
         return view;
           }
 
@@ -142,6 +143,12 @@ public class FragmentTwo extends Fragment {
                     .into(post_image);
 
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        button.hide();
     }
 }
 

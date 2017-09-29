@@ -1,11 +1,13 @@
 package com.example.hp.heartful;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -82,6 +84,8 @@ public class loginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if (view==sign_In){
             // start user profile activity
+            InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             user_Login();
         }
         if (view==sign_Up){
