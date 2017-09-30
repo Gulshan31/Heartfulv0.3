@@ -3,21 +3,408 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\HP INDIA\.android\build-cache\b12583d06f9283ee6a49b88b5c40f19a0c565bfe\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_55163daefcd01e548dbfb7fe26b386627f83725c\classes.dex" />
+        revision="26.0.1"
+        sha1="22c673e65215e0764add61e3102946de895439e4">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_beec57d4e58a5ff876cbbb05de44cc9e5ddf13fa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\d2125cc9b443f19c409bf74db5dead37df639cfc\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d095503f29a8dedc55b9326ed97a5902a1527ab9">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e5b9f6fa30eaca4e359d4cf2951a1cc247efdc33\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.0.1\e1bb32b12b25e2f78e6786059ca7ea878f8345e0\support-annotations-26.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e1bb32b12b25e2f78e6786059ca7ea878f8345e0">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-26.0.1_b70ad63d8da1b6b543c84f76a9421cfef146fbbc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\17bf62fc902bce106319c5e7d6a7a5bc73b8d292\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0e0e8918eb74e3ee9e82eef6430a4359b2b577d3">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b479fff3992154f4005f87224ec6eb45836d234c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\3897ce73b466addf04e6f86e2fab5b452d01512a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="5b65ec1ebc84af3baecfd28954c9e7ff01b937a8">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_60eb6fc0ac10893f6ca6c4ca4ccd0e704e484b5d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\216d0bc4565e22ebe2f3c46830639c919bbee62a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="4a88eaa7f9a31907def9a7968367475bdf5170be">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_587116a2cddea25a28d9591ca5bbed30cabcb184\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\100232d910d3b67d5da11c54b710af9d112ddd4b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_599bce835ec26bd94a7f08570557e6ccbaa5dbcc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\947cdb4f95756e44638e4cf52def01c9287b8132\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5d5573b0baafc2f95b75f1c683ccba46c32e637a\classes.dex" />
     </item>
     <item
         is-multidex="true"
         jar="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="3d7d3f0d44de51e6268eecaf57cd98dc57c56f15">
+        revision="26.0.1"
+        sha1="818414156fb44d220f777f25787c3425feed9483">
         <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_070e57b0a099893ab12c664f186150740a517c2f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.8.0\9bada650e1afe9c6174ddc0d113c1fce4dc26fe0\glide-3.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9bada650e1afe9c6174ddc0d113c1fce4dc26fe0">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.8.0_b3b7b985622189b50e924e930bb5580f9352f3d9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\4b06d0a40e6e1842591822bd8d73aecfb63a1eed\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_eacb985b97cb28e07534b30d3c66409d398d64c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\db1c429a45ef02cb5b9557afa300d7771cbd7cd4\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_98458a4d69300ffd7e9ce12174e72aae32f82680\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\937ac6bcad46eff4a6ebf74fd1dedc282aa8e20f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="dff4d8f88fe2c0e57306e6981fd9b90caeead7e3">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d8bdce61523ed7950e0fad0e7e7e389267d6a70b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\5f5d6ddb1defb476b5ddcacd451acbd6ab236b01\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c390af22079a61fdc42712c19f15a700f1fc2cbf">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b93eeb97728dca54bfd44a1e1addf0d2b9e3a214\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\eda8212e90f5a79b54567aea7f2ff5850ddb8df8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b849761f0ccd286e1ec591d547b1f8fdd5c21337\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\2175a8700c18f2bc50e4c2fcc1453fdbbee1e494\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_299374d7caf0b0851039c5aa30042e6bfde169cc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\71aaddf829db4563960e99647ea130c785545828\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1eb6a0299cb51cc236dae0f8435e16675bfa89ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\3d046a71913da3893cc49b8c72a40bbb15a2adc3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4907f0d34f7feab4b693a0af93a4bd7a8b738a1f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\caaf7481d6cd29e0dc5579b0a2ff7440b82a6fb9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="083e7bc5a9d9404b49b8f34e5091532361fa28e6">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6ec4510aed807a8df8162333101f946d02206026\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\d6a2ec86a21aa4c18e7565e158c47b301145a6e8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_36447e58abb676f546bedbdcc2d333ff9e2f0bde\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\e920954f2b0f2bbc05842912cdec48cea62eca6d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="71af915b7f4f7ec0b5f768b365145bb6a5cb9a66">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_954a86af9d6849c09a00ac645ac8525f495aec85\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\fbdd10340e2c4aaa93fedd90c3f8dbdae616aba0\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_42823105b6a8f43fd99f17ce5cc62dbfff149013\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_b1a321cc07b7001a0c52ec00232d37b7828aef53\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\c8815d8574173350d72b9f0472dedc92f7615726\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="56e96fa067ba358a6c60184e40947810dcd78f30">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_34615393edcefd054df96035ea0cbd861e60a30b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\9e2a790bb1ff48fc3399b897ec53682fa0dd58c1\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="10c32fcf3d0acc4b208fc39f8d2e16b69ef8bd3b">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a5ebacdddcee8da29f8dd98cc82a9893799c0d95\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\37dc4f1861b04c402644d24bf2b7a1fa3c499abe\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6bd32b72098fecf44dcab3808a11e6b9fcb86b7b">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5b0728d14b5027cc7e2d31cfc299ce150c29fafa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\1024d3f3690c257920bfa2139fe897a6d7ee6065\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1f2ffedb7d40e8b2a0f792e38ce1cf65401e3a87\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\3d8c2d4ad0df4c3a3d90811b8fc4db301a06c73c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ee980b7070c99ef724c440f51c6ef690f15a0538\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\e59a110ae11a6f841bad472ac588809de3847dcf\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a4590fa7eadce322ca893129fdc999074e1aa5bf">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ce071f47d638d1f9fb071d9534b1e7c219aa0b69\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-applinks-1.4.0_bb9b0053ef1262cc142adb17916489d40665a735\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\befd6cc07bd0e4758a580c438aebda1f3b2b0b24\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fb0f0a01e50fa34ff06e4a2378f093f5e5461ff2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\a4d3286e75660d30dac84e059fe52a373f96a381\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a8ce8488efe2dd876bf87aace933cadd37f573ec\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\8d4168ca64ab45850eab72db8ceb6bc9a942e406\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="807751a24cf96566fd8675517c94d8463cf364db">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_108d9f89d1263dae0068d52396f57a5f9af802d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\bda8667fc216ab1c0017fee8a3327a68dd4677c6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_62013e40677534dc8e90a639ef472dff2eb02d85\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\AppData\Local\Android\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_230c7bea28b2f1c0bc32361a24f7afd7c0ebba7e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\eece20ad8b3087d17d9abc3743da020166b19a65\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6926588ca2d49c21413be8010d4db4192e505579\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-tasks-1.4.0_f4287ab31fad388e317b131c8cf43d1c05098dad\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\c26da17de09377c7c59280688846a5040ac518d7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c76f6507a42aec274953e882bf3c49a570843ef5">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_37181dc38c74d0c6d2c784a3ade22a5dd0758873\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\cbc57afd09bbb50ccbb3bd611b113cbf70cd17bc\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e5ec40c1a4ddeda0e5b046b61765eb486f3e4163\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\10e66732edc52a136edf8e53a67217aa5eeb37f9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="681eeeaec5300e5257ad9bf889c3859ba3833d5a">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8879563a1d2f9613c6031507638aa8adda925f31\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\568c7a06b728e73e8783505bdbd92c40df24826e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e7424f816f538c2acfba6169b25e297ea22afbd8">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5d19e2cd86b914ff7caf40cd7a10ab74440da411\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\e38558917b34558878086fdf1579dac151935711\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ae77d1be773088cea8cad3678cf4f8bc90684c58\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_55163daefcd01e548dbfb7fe26b386627f83725c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\849d199a94c07edf8d00920e1d41317c504c08bf\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8c6ebb7d087d1a30bf84356bd2aecf85309fc024">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2029a5f348269fa47e83759eabc0dfe75963cc07\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\HP INDIA\.android\build-cache\89977c3e0d4f33d5577a8eda79ff9f637f37ffb7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="C:\Users\HP INDIA\Desktop\GitHub\Heartfulv0.3\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_abd7f597f9a755b9e8a935d16a613806891338cf\classes.dex" />
     </item>
 
 </items>
