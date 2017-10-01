@@ -44,7 +44,7 @@ public class orgInsideActivity extends AppCompatActivity{
         mNgoLogo=(ImageView)findViewById(R.id.backdrop);
         mNgoInfo=(TextView)findViewById(R.id.orgInfo);
         mNgoName=(TextView)findViewById(R.id.orgName);
-        initCollapsingToolbar();
+//        initCollapsingToolbar();
             mDatabase= FirebaseDatabase.getInstance().getReference().child("NgoList");
         mDatabase.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -68,7 +68,14 @@ public class orgInsideActivity extends AppCompatActivity{
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(mNgoLogo);
 
+                Glide.with(getApplicationContext()).load(loadImage)
+                        .thumbnail(0.5f)
+                        .crossFade()
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(mNgoLogo);
+
             }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -122,38 +129,35 @@ public class orgInsideActivity extends AppCompatActivity{
         });
     }
 
-    private void initCollapsingToolbar() {
-        final CollapsingToolbarLayout collapsingToolbar =
-                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle(" ");
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
-        appBarLayout.setExpanded(true);
 
-        // hiding & showing the txtPostTitle when toolbar expanded & collapsed
-        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            boolean isShow = false;
-            int scrollRange = -1;
-
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                if (scrollRange == -1) {
-                    scrollRange = appBarLayout.getTotalScrollRange();
-                }
-                if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle("Ngo Details");
-                    isShow = true;
-                } else if (isShow) {
-                    collapsingToolbar.setTitle(" ");
-                    isShow = false;
-                }
-            }
-        });
-        Glide.with(getApplicationContext()).load(loadImage)
-                .thumbnail(0.5f)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(mNgoLogo);
-    }
+//    private void initCollapsingToolbar() {
+//        final CollapsingToolbarLayout collapsingToolbar =
+//                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+//        collapsingToolbar.setTitle(" ");
+//        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
+//        appBarLayout.setExpanded(true);
+//
+//        // hiding & showing the txtPostTitle when toolbar expanded & collapsed
+//        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+//            boolean isShow = false;
+//            int scrollRange = -1;
+//
+//            @Override
+//            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+//                if (scrollRange == -1) {
+//                    scrollRange = appBarLayout.getTotalScrollRange();
+//                }
+//                if (scrollRange + verticalOffset == 0) {
+//                    collapsingToolbar.setTitle("Ngo Details");
+//                    isShow = true;
+//                } else if (isShow) {
+//                    collapsingToolbar.setTitle(" ");
+//                    isShow = false;
+//                }
+//            }
+//        });
+//
+//    }
     private void openWebView(String url) {
         Intent intent = new Intent(orgInsideActivity.this, WebViewContents.class);
         intent.putExtra("url", url);
