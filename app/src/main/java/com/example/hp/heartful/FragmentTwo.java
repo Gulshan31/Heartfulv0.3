@@ -36,6 +36,8 @@ public class FragmentTwo extends Fragment {
     public FragmentTwo(){}
   com.melnykov.fab.FloatingActionButton button;
     ImageView imageView;
+    boolean canPost;
+    private DatabaseReference forUsers;
     private RecyclerView mNewsLists;
     private DatabaseReference mDatabase;
 //    private ProgressDialog progressDialog;
@@ -50,18 +52,36 @@ public class FragmentTwo extends Fragment {
         imageView = (ImageView) view.findViewById(R.id.news_images);
         button=(com.melnykov.fab.FloatingActionButton) view.findViewById(R.id.button);
         firebaseAuth=FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()!=null) {
+            forUsers= FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseAuth.getCurrentUser().getUid());
+            forUsers.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Users user = dataSnapshot.getValue(Users.class);
+                    canPost = user.isCanPost();
+                    Log.v("can u post", String.valueOf(canPost));
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(firebaseAuth.getCurrentUser()!=null){
+                if(canPost){
                 startActivity(new Intent(getActivity(),NewsPost.class));
 
             }
             else {
-                    Toast.makeText(getActivity(),"Make sure Your are logged in for posting your own news", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(),"If NGO ,login to post news", Toast.LENGTH_LONG).show();
                 }
             }
+
         });
+
         mDatabase= FirebaseDatabase.getInstance().getReference().child("News");
         mDatabase.keepSynced(true);
         mNewsLists=(RecyclerView)view.findViewById(R.id.new_lists);

@@ -85,7 +85,6 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
     private String profileName;
     private TextView userName;
     private CircleImageView profilePic;
-    private DatabaseReference userInfo;
     private CallbackManager callbackManager;
     View view;
     View view_pro;
@@ -99,7 +98,6 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
         view = inflater.inflate(R.layout.sign_up_page,container, false);
         view_pro = inflater.inflate(R.layout.profile_layout,container, false);
         fbProgress= new ProgressDialog(getActivity());
-        userInfo=FirebaseDatabase.getInstance().getReference().child("Users");
         profilePic=(CircleImageView) view_pro.findViewById(R.id.profile_pic);
         userName=(TextView)view_pro.findViewById(R.id.user_name);
         edit=(ImageView)view_pro.findViewById(R.id.edit);
@@ -154,7 +152,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
 
                 justRefreshed = false;
                 if(usingSignIn)
-                    shouldRefreshOnResume = true;
+                shouldRefreshOnResume = true;
 
             }
 
@@ -328,7 +326,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
         final   String user_name=User_Name.getText().toString();
         if(TextUtils.isEmpty(user_name)){
             // email is empty
-            Toast.makeText(getActivity(),"please select a name",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),"please select  name",Toast.LENGTH_SHORT).show();
             return;// to stop the function from executation.
         }
 
@@ -345,7 +343,7 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
             return;
         }
         // here if everything ok the user will be register
-        progressDialog.setMessage("Registering User,please wait...");
+        progressDialog.setMessage("Registering User, please wait...");
         progressDialog.show();
         mAuth.createUserWithEmailAndPassword(email,pass_word)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>(){
@@ -353,18 +351,17 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             //show user profile
-                            Toast.makeText(getActivity(),"Registerd successfully",Toast.LENGTH_SHORT).show();
-                            String userId= mAuth.getCurrentUser().getUid();
-                            DatabaseReference database=userInfo.child(userId);
-                            database.child("userName").setValue(user_name);
-                            database.child("profilePicLink").setValue("https://imgur.com/a/uVX5M");
+                            Toast.makeText(getActivity(),"Registered successfully",Toast.LENGTH_SHORT).show();
+                            firebaseUser=mAuth.getCurrentUser();
+                            boolean canPost=false;
+                            String personName = user_name;
+                            String personPhoto =  "https://firebasestorage.googleapis.com/v0/b/heartful-dc3ac.appspot.com/o/profilepic.png?alt=media&token=5b98dc2e-1e36-4eb8-86e9-54d10222120e";
+                            DatabaseReference userData = forUsers.child(firebaseUser.getUid());
+                            Users user =new Users(personName,personPhoto,canPost);
+                            userData.setValue(user);
                             justRefreshed = false;
                             reLoad();
                             progressDialog.dismiss();
-                            //  startActivity(new Intent(getActivity(),userProfileActivity.class));
-//                            intent = new Intent(getApplicationContext(),userProfileActivity.class);
-//                            intent.putExtra("EdiTtEXTvALUE", User_Name.getText().toString());
-//                            startActivity(intent);
                         }else {
                             Toast.makeText(getActivity(),"could not register, pls try again Error is"+ task.getException(),Toast.LENGTH_LONG).show();
                             progressDialog.dismiss();
@@ -388,16 +385,11 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
                             //   userProfile();
                             firebaseUser=mAuth.getCurrentUser();
                             String personName = firebaseUser.getDisplayName();
+                            boolean canPost=false;
                             Uri personPhoto = firebaseUser.getPhotoUrl();
                             DatabaseReference userData = forUsers.child(firebaseUser.getUid());
-//                            userData.child("userName").setValue(personName);
-//                            userData.child("profilePicLink").setValue(personPhoto.toString());
-                            Users user =new Users(personName,personPhoto.toString());
+                            Users user =new Users(personName,personPhoto.toString(),canPost);
                             userData.setValue(user);
-                            Log.i(TAG, "Display Name: " + personName);
-                            Log.i(TAG, "given  Name: " + personName);
-                            Log.i(TAG, "uri: " + personPhoto);
-                            Log.v(TAG, "signInWithCredential:success");
                             Log.v(TAG, "signInWithCredential:success");
                             justRefreshed = false;
                             reLoad();
@@ -405,8 +397,6 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
 
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.v("Facebookcheking","Dekhte hai ");
-                            Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(getActivity(), "Authentication failed.",Toast.LENGTH_SHORT).show();
                             LoginManager.getInstance().logOut();
                             fbProgress.dismiss();
@@ -431,16 +421,14 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
                             // Sign in success, update UI with the signed-in user's information
                             //      userProfile();
                             firebaseUser=mAuth.getCurrentUser();
+                            boolean canPost=false;
                             String personName = firebaseUser.getDisplayName();
                             Uri personPhoto = firebaseUser.getPhotoUrl();
                             DatabaseReference userData = forUsers.child(firebaseUser.getUid());
 //                            userData.child("userName").setValue(personName);
 //                            userData.child("profilePicLink").setValue(personPhoto.toString());
-                            Users user =new Users(personName,personPhoto.toString());
+                            Users user =new Users(personName,personPhoto.toString(),canPost);
                             userData.setValue(user);
-                            Log.i(TAG, "Display Name: " + personName);
-                            Log.i(TAG, "given  Name: " + personName);
-                            Log.i(TAG, "uri: " + personPhoto);
                             Log.v(TAG, "signInWithCredential:success");
                             justRefreshed = false;
                             reLoad();
@@ -449,8 +437,6 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
 
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Log.v("googlecheking","Dekhte hai ");
                             Toast.makeText(getActivity(), "Authentication failed.",Toast.LENGTH_SHORT).show();
                             progress.dismiss();
 
@@ -501,7 +487,6 @@ public class FragmentThree extends Fragment implements View.OnClickListener{
         if(shouldRefreshOnResume){
             // refresh fragment
             Log.v("value of should refresh", String.valueOf(shouldRefreshOnResume));
-//            Log.v("reload ing through", "onresume");
             reLoad();
         }
     }
